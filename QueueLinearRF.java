@@ -8,12 +8,12 @@
  *
  * @author proms
  */
-public class Queue implements QueueADT
+public class QueueLinearRF implements QueueADTLinear
 {
     private Object[] queue;
     private int front,rear;
     private int nItems;
-    public Queue()
+    public QueueLinearRF()
     {
         this(100);
     }
@@ -22,7 +22,7 @@ public class Queue implements QueueADT
     {
         return nItems == queue.length;
     }
-    public Queue (int size)
+    public QueueLinearRF (int size)
     {
         queue = new Object[size];
         front = 0;
@@ -33,6 +33,11 @@ public class Queue implements QueueADT
     {
         if(isFull())
             throw new QueueFullException("Full Queue");
+        if(nItems == queue.length)
+            while(front!=0)
+            {
+                queue[front-1] = queue[front];
+            }
         queue[++rear] = init;
     }
     
@@ -41,25 +46,28 @@ public class Queue implements QueueADT
     public Object remove()
     {
         if(isEmpty())
-            
+            throw new QueueEmptyException("Empty queue");
+        Object tmp = queue[front];
+        front++;
+        return tmp;
     }
 
     @Override
     public int size()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return nItems;
     }
 
     @Override
     public boolean isEmpty()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return nItems == 0;
     }
 
     @Override
     public Object front()
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return queue[front];
     }
 
 }

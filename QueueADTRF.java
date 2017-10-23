@@ -8,7 +8,7 @@
  *
  * @author proms
  */
-public interface QueueADT
+public interface QueueADTRF
 {
     public void insert(Object init);
     public Object remove ();

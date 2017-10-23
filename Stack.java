@@ -73,10 +73,10 @@ public class Stack implements StackADT
         OStack[++top] = init;
     }
 
-    private int intValue(Object pos)
+   /* private int intValue(Object pos)
     {
         return Integer.parseInt(pos.toString());
-    }
+    }*/
 
     public static Stack merge(Stack A, Stack B)
     {
@@ -85,7 +85,8 @@ public class Stack implements StackADT
         Stack tmp = new Stack(A.size() + B.size());
         for (int k = 0; k < (count); k++)
             if (!A.isEmpty() && !B.isEmpty())
-                if (A.intValue(A.top()) >= B.intValue(B.top()))
+                //if (A.intValue(A.top()) >= B.intValue(B.top()))
+                if(((Integer)(A.top())).intValue() >= ((Integer)(B.top())).intValue())
                     tmp.push(A.pop());
                 else
                     tmp.push(B.pop());

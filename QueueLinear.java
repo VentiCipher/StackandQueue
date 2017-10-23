@@ -20,9 +20,9 @@ public class QueueLinear implements QueueADTLinear
     
     private boolean isFull()
     {
-        System.out.println("n  "+nItems);
-        System.out.println("length "+queue.length);
-        System.out.println(nItems >= queue.length);
+        //System.out.println("n  "+nItems);
+        //System.out.println("length "+queue.length);
+        //System.out.println(nItems >= queue.length);
         return nItems >= queue.length;
     }
     public QueueLinear (int size)
@@ -30,6 +30,7 @@ public class QueueLinear implements QueueADTLinear
         queue = new Object[size];
         front = 0;
         rear = -1;
+        nItems=0;
     }
     
     public void insert(Object init) throws QueueFullException
@@ -37,7 +38,7 @@ public class QueueLinear implements QueueADTLinear
         if(isFull())
             throw new QueueFullException("Full Queue");
         nItems++;
-        System.out.println("nitems ="+nItems);
+       // System.out.println("nitems ="+nItems);
         queue[++rear] = init;
     }
     
@@ -55,6 +56,7 @@ public class QueueLinear implements QueueADTLinear
         for(int i = 1 ; i < nItems ; i++)
             queue[i-1] = queue[i];
         nItems--;
+        rear--;
         return tmp;
     }
 

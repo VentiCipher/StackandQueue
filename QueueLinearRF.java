@@ -55,7 +55,7 @@ public class QueueLinearRF implements QueueADTLinear
                 throw new QueueFullException(("Full"));
         queue[++rear] = init;
         nItems++;
-        System.out.println("object " + init + " rear is " + rear + " n items is " + nItems + " front is " + front);
+        //System.out.println("object " + init + " rear is " + rear + " n items is " + nItems + " front is " + front);
     }
 
     @Override

@@ -94,6 +94,8 @@ public class Stack implements StackADT
                 tmp.push(B.pop());
             else if (!A.isEmpty() && B.isEmpty())
                 tmp.push(A.pop());
+            else
+                throw new StackEmptyException(("Empty Stack"));
      //   System.out.println("tmp is " + tmp.nItems);
         return tmp;
     }

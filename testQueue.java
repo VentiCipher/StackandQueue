@@ -12,7 +12,7 @@ public class testQueue
 {
     public static void main(String[] args)
     {
-        QueueLinearRF QL = new QueueLinearRF(6);
+        QueueLinear QL = new QueueLinear(6);
         QL.insert(new Integer(2));
         QL.insert(new Integer(3));
         QL.insert(new Integer(4));

@@ -13,9 +13,10 @@ public class CheckPalindrome
 
     public static void main(String[] args) throws IllegalArgumentException
     {
-        if (args[0] == null)
+/*        if (args[0] == null)
             throw new IllegalArgumentException("Error no argument to check");
-        String inp = args[0];
+        String inp = args[0];*/
+        String inp = "madam";
         Stack palindrome = new Stack(inp.length());
         System.out.println("inp = "+inp.length());
         boolean isEven = inp.length() % 2 == 0;
@@ -37,7 +38,8 @@ public class CheckPalindrome
                 palindrome.push((char) inp.charAt(idx));
             }
         }
-        palindrome.displayc();
+        if(!palindrome.isEmpty())
+            palindrome.display();
       //  System.out.println("palindrome size = " + palindrome.size());
         if ((palindrome.size() > 1 && !isEven) || (palindrome.size() != 0 && isEven))
             System.out.println(inp + " is not a palindrome");

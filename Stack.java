@@ -100,13 +100,11 @@ public class Stack implements StackADT
         if (this.top() instanceof Integer)
             for (int i = nItems - 1; i >= 0; i--)
                 System.out.println(Integer.parseInt(((Integer) OStack[i]).toString()));
-    }
-    public void displayc()
-    {
-            System.out.println("-0-");
+        else 
             for (int i = nItems - 1; i >= 0; i--)
                 System.out.println(OStack[i]);
     }
+
     public Object[] multiPop(int k)    throws StackEmptyException, IllegalArgumentException
     {
         if(k < 0)

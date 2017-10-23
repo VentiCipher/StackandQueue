@@ -8,10 +8,10 @@
  *
  * @author proms
  */
-public class Queue implements StackADT
+public class Queue implements QueueADT
 {
     private Object[] queue;
-    private int front;
+    private int front,rear;
     private int nItems;
     public Queue()
     {
@@ -25,12 +25,17 @@ public class Queue implements StackADT
     public Queue (int size)
     {
         queue = new Object[size];
-        front = -1;
+        front = 0;
+        rear = -1;
     }
     
     public void insert(Object init)
     {
         if(isFull())
-            throw new QueueFullException
+            throw new QueueFullException("Full Queue");
+        queue[++rear] = init;
     }
+    
+    public 
+
 }

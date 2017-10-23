@@ -81,7 +81,7 @@ public class Stack implements StackADT
     public static Stack merge(Stack A, Stack B)
     {
         int count = A.size() + B.size();
-        System.out.println("Count is " + count);
+      //  System.out.println("Count is " + count);
         Stack tmp = new Stack(A.size() + B.size());
         for (int k = 0; k < (count); k++)
             if (!A.isEmpty() && !B.isEmpty())
@@ -93,7 +93,7 @@ public class Stack implements StackADT
                 tmp.push(B.pop());
             else if (!A.isEmpty() && B.isEmpty())
                 tmp.push(A.pop());
-        System.out.println("tmp is " + tmp.nItems);
+     //   System.out.println("tmp is " + tmp.nItems);
         return tmp;
     }
 

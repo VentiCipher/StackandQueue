@@ -36,6 +36,30 @@ public class Queue implements QueueADT
         queue[++rear] = init;
     }
     
-    public 
+
+    @Override
+    public Object remove()
+    {
+        if(isEmpty())
+            
+    }
+
+    @Override
+    public int size()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isEmpty()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object front()
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

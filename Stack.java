@@ -84,27 +84,16 @@ public class Stack implements StackADT
         System.out.println("Count is " + count);
         Stack tmp = new Stack(A.size() + B.size());
         for (int k = 0; k < (count); k++)
-        {
-            if(!A.isEmpty() && !B.isEmpty())
-            {
-                if(A.intValue(A.top()) >= B.intValue(B.top()))
+            if (!A.isEmpty() && !B.isEmpty())
+                if (A.intValue(A.top()) >= B.intValue(B.top()))
                     tmp.push(A.pop());
                 else
                     tmp.push(B.pop());
-            }
-            else if(A.isEmpty() && !B.isEmpty())
-            {
-                while(!B.isEmpty())
-                    tmp.push(B.pop());
-            }
-            else if(!A.isEmpty() && B.isEmpty())
-            {
-                System.out.println("Check A not empty");
-                while(!A.isEmpty())
-                    tmp.push(A.pop());
-            }
-        }
-        System.out.println("tmp is "+tmp.nItems);
+            else if (A.isEmpty() && !B.isEmpty())
+                tmp.push(B.pop());
+            else if (!A.isEmpty() && B.isEmpty())
+                tmp.push(A.pop());
+        System.out.println("tmp is " + tmp.nItems);
         return tmp;
     }
 

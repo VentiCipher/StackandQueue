@@ -8,7 +8,7 @@
  *
  * @author proms
  */
-public class Queue
+public class Queue implements StackADT
 {
     
 }

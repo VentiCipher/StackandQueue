@@ -73,7 +73,7 @@ public class Stack implements StackADT
         OStack[++top] = init;
     }
 
-    public int intValue(Object pos)
+    private int intValue(Object pos)
     {
         return Integer.parseInt(pos.toString());
     }
